@@ -1,17 +1,13 @@
 pipeline {
-  agent any
-  
-
-  stages{
-    stage("test") {
+  agent {
+    docker { image 'node:16-alpine' }
+    registryCredentialsId 'dockercred'
+    registryUrl 'https://docker.io'
+  }
+  stages {
+    stage('Test') {
       steps {
-        echo "i am creating a file"
-      }
-    }
-     stage("mvn check") {
-      steps {
-        echo "this is checking with mvn"
-        sh "mvn clean package"
+        sh 'node --version'
       }
     }
   }
