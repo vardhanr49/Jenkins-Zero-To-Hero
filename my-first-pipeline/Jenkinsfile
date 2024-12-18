@@ -1,11 +1,18 @@
 pipeline {
   agent any
+  environment {
+    PATH = "/usr/share/maven/bin:$PATH"
+  }
   stages{
     stage("test") {
       steps{
       echo "i am creating a file"
-      sh "mkdir ramu"
-      sh "whoami"
+      }
+    }
+     stage("mvn check") {
+      steps{
+        echo "this is checking with mvn"
+        sh "mvn clean package"
       }
     }
   }
