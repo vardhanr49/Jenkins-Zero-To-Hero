@@ -1,7 +1,7 @@
 pipeline {
-  agent {}
+  agent
   stages{
-    stage ("test") {
+    steps("test") {
       echo "i am creating a file"
     }
   }
