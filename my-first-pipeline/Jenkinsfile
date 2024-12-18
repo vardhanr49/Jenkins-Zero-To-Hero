@@ -1,5 +1,5 @@
 pipeline {
-  agent
+  agent any {}
   stages{
     steps("test") {
       echo "i am creating a file"
