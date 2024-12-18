@@ -1,15 +1,8 @@
 pipeline {
-  agent {
-    docker {
-    registryCredentialsId 'dockercred'
-    registryUrl 'https://docker.io'
-           }
-  }
-  stages {
-    stage('Test') {
-      steps {
-        sh 'docker --version'
-      }
+  agent {}
+  stages{
+    stage ("test") {
+      echo "i am creating a file"
     }
   }
 }
