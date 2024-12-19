@@ -1,4 +1,4 @@
-currentBuild.displayName = "newfile-#"+currenrtBuild.number
+currentBuild.displayName = "newfile-#"+currentBuild.number
 pipeline {
   agent any
   environment {
