@@ -1,11 +1,16 @@
+currentBuild.displayName = "newfile-#"+currenrtBuild.number
 pipeline {
-  agent {
-    docker { image 'node:16-alpine' }
-  }
+  agent any
   stages {
-    stage('Test') {
+    stage("test") {
       steps {
-        sh 'node --version'
+        echo "i am creating a file"
+      }
+    }
+     stage("mvn check") {
+      steps {
+        echo "this is checking with mvn"
+        sh "mvn clean package"
       }
     }
   }
